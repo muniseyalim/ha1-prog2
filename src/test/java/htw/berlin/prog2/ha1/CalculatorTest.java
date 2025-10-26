@@ -127,7 +127,19 @@ class CalculatorTest {
         assertEquals(expected, actual);
     }
 
+    //2. Negativer Test
 
+    @Test
+    @DisplayName("Soll -0 nicht anzeigen.")
+    void testNegativeKeyOnZero() {
+        Calculator calc = new Calculator();
+
+        String expected = "0";
+        calc.pressDigitKey(0);
+        calc.pressNegativeKey();
+
+        assertEquals(expected, calc.readScreen());
+    }
 
 }
 
