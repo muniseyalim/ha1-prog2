@@ -107,5 +107,26 @@ class CalculatorTest {
         assertEquals(expected, actual);
     }
 
+    // 1. Negativer Test
+
+    @Test
+    @DisplayName("Soll den Speicher nach erstem C-Druck behalten.")
+    void testClearKey() {
+        Calculator calc = new Calculator();
+
+        calc.pressDigitKey(1);
+        calc.pressBinaryOperationKey("");
+        calc.pressDigitKey(2);
+        calc.pressClearKey();
+        //Überprüfen, dass die „zwischengespeicherten Werte“ nach erstem C-Druck nicht gelöscht werden.
+
+        String expected = "1";
+        String actual = calc.readScreen();
+
+        assertEquals(expected, actual);
+    }
+
+
+
 }
 
