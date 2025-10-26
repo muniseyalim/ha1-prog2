@@ -115,9 +115,10 @@ class CalculatorTest {
         Calculator calc = new Calculator();
 
         calc.pressDigitKey(1);
-        calc.pressBinaryOperationKey("");
+        calc.pressBinaryOperationKey("+");
         calc.pressDigitKey(2);
         calc.pressClearKey();
+        calc.pressEqualsKey();
         //Überprüfen, dass die „zwischengespeicherten Werte“ nach erstem C-Druck nicht gelöscht werden.
 
         String expected = "1";
